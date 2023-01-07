@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+{% comment %} <h1>Add new student detail here</h1> {% endcomment %}
+{% comment %} <form method='POST'>
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit" value="Add Student">
+</form> {% endcomment %}
+
+
+
+{% comment %} <div class="container-fluid text-center", style="margin-top:30px;">
+    <div>
+        <form  method="POST">
+            <h2 class="text-primary page-header text-center"><i class="fa fa-user">Registration</i></h2>
+            {{form|crispy}}
+            <br>
+            {% csrf_token %}
+            <input class="btn btn-success" type="submit" value="Add Student" >
+        </form>
+        <br>
+         <h4 class="font-monospace">Add Student Personal Details <a class="btn btn-warning" href="#">Press Here</a> </h4>
+    </div>
+</div> {% endcomment %}
+<section class="h-100 h-custom" style="background-color:#0DCAF0;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3 shadow-lg">
+            <img src="https://wallpaperaccess.com/full/6592904.jpg" class="img-fluid" alt="Sample image">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+  
+              <form class="px-md-2" method="POST">
+  
+              
+
+                
+                <div class="form-outline mb-4">
+                  <input type="number" id="form3Example1q" class="form-control" name="S_Reg_No"/>
+                  <label class="form-label" for="form3Example1q" >Reg No</label>
+                </div>
+                
+                <div class="form-outline mb-4">
+                    <input type="text" id="form3Example1q" class="form-control" name="S_Name"/>
+                    <label class="form-label" for="form3Example1q">Student Name</label>
+                  </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline datepicker">
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="exampleDatepicker1"
+                        name="S_DOB"
+                      />
+                      <label for="exampleDatepicker1" class="form-label">Select a date</label>
+                    </div>
+  
+                  </div>
+                  
+                  <div class="col-md-6 mb-4">
+
+                    <input type="text" id="form3Example1q" class="form-control" name="S_Gender"/>
+                    <label class="form-label" for="form3Example1q">Student Gender</label>
+  
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                            <input type="text" id="form3Example1q" class="form-control" name="S_Yr"/>
+                            <label class="form-label" for="form3Example1q">Student yeat</label>
+          
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <input type="text" id="form3Example1q" class="form-control" name="S_Dept"/>
+                        <label class="form-label" for="form3Example1q">Student Department</label>
+                    </div>
+                </div>
+  
+                <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                  <div class="col-md-6">
+  
+                    <div class="form-outline">
+                      <input type="number" id="form3Example1w" class="form-control"  name="S_Adhar_No"/>
+                      <label class="form-label" for="form3Example1w">Adhar No</label>
+                    </div>
+  
+                  </div>
+                </div>
+                {% csrf_token %}
+                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                <input type="submit" class="btn btn-primary btn-lg shadow-lg" value="Submit">
+                </div>
+                {% comment %} <button type="submit" class="btn btn-success btn-lg mb-1" herf="home">Submit</button> {% endcomment %}
+                {% comment %} <a href="{% url 'home' %}"><button class="btn btn-success me-3" type="button">Submit</button></a> {% endcomment %}
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% comment %} col-md-offset-4 col-md-4 {% endcomment %}

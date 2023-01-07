@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+        </style>
+</head>
+<body>
+    {% block content %}
+       <h1>Student details</h1>
+       <table>
+           <thead>
+               <th>Student name</th>
+               <th>Student Transport</th>
+               <th>Student attendance</th>
+               <th>Student percentage</th>
+           </thead>
+           <tr>
+            {% for st in students  %}
+              <td>{{st.STD}}</td>
+              <td>{{st.S_Transport}}</td>
+              <td>{{st.S_Attendance}}</td>
+              <td>{{st.S_Percentage}}</td>
+            <td><a class="btn btn-danger" href="/update/{{st.id}}">update</a></td>
+           </tr>
+           {% endfor %}
+       </table>
+       {% endblock content %}
+</body>

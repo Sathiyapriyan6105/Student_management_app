@@ -1,0 +1,109 @@
+{% comment %} {% load static %} {% endcomment %}
+{% comment %} {% include "header.html" %} {% endcomment %}
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% comment %} favicon {% endcomment %}
+        {% comment %} <link rel="stylesheet" href={% static "img/favicon.ion" %}/> {% endcomment %}
+        {% comment %} logo {% endcomment %}
+        {% comment %} <link rel="stylesheet" href={% static "img/logo.ico" %}/> {% endcomment %}
+        {% comment %} bootstrap 5 css {% endcomment %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        {% comment %} Fontawsome {% endcomment %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        {% comment %} CSS {% endcomment %}
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css"/>
+        <link rel="stylesheet" href={% static "css/styles.css" %}/>
+       
+        <title>Student_database</title>
+    </head>
+    <body>
+       <div class="wrapper">
+           <header>
+               <nav class="navbar navbar-expand-lg" style="background-color:#0DCAF0";>
+  <!-- Container wrapper -->
+  <div class="container">
+    <!-- Navbar brand -->
+    <i class="fas fa-user-alt"></i>
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarButtonsExample"
+      aria-controls="navbarButtonsExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color:black;">Student DataBase</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+
+      <div class="d-flex align-items-center">
+       
+        <a href="/create"><button class="btn btn-success me-3 shadow-lg" type="button"><i class="fa fa-user-plus">&nbsp;</i>Add Student</button></a>
+        <a href="{% url 'logout' %}"><button class="btn btn-danger me-3 shadow-lg" type="button"><i class="fa fa-sign-out-alt ">&nbsp;</i>Log Out</button></a>
+        <a
+          class="btn btn-dark px-3 shadow-lg"
+          href="#"
+          role="button"
+          ><i class="fa fa-cog fa-spin"></i
+        ></a>
+      </div>
+    </div>
+
+
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+           </header>
+           {% block content %}
+           
+           {% endblock content %}
+       </div>
+    
+
+       <footer class="bg-light text-center text-lg-start">
+      
+        <div class="text-center p-3" style="background-color:#0DCAF0;">
+          @<a class="text-dark" href="http://www.kavery.org.in/">www.kavery.org.in</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        {% comment %} Datatables js {% endcomment %}
+       <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+       <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+       
+       {% comment %} js {% endcomment %}
+       <script>
+           $("#example").DataTable({
+               paging:true,
+               pageLength:10,
+               lengthChange:true,
+               autoWidth:true,
+               searching:true,
+               bInfo:true,
+               bSort:true,
+           })
+       </script>
+    </body>
+
+</html>

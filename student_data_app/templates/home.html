@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+
+
+
+
+{% block content %}
+<div class="container">
+    <br >
+    <h2 class="text-center">The Kavery Polytechnic College</h2>
+    <br>
+    <table class="table table-bordered" id="example" >
+        <thead class="table-success">
+            <tr>
+                <th style="width:30%" >S_Reg_No</th>
+                <th  style="width:30%" >S_Name</th>
+                <th   style="width:25%">S_DOB</th>
+                <th  style="width:5%">S_Gender</th>
+                <th  style="width:5%">S_Dept</th>
+                <th  style="width:5%">S_Yr</th>
+                <th>S_Adhar_No</th>
+                <th>S_Academics</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+         {% comment %} Data from backend {% endcomment %}
+         {% for st  in students  %}
+         <tr>
+             <td>{{ st.S_Reg_No}}</td>
+             <td>{{ st.S_Name}}</td>
+             <td>{{ st.S_DOB}}</td>
+             <td>{{ st.S_Gender}}</td>
+             <td>{{ st.S_Dept}}</td>
+             <td>{{ st.S_Yr}}</td>
+             <td>{{ st.S_Adhar_No}}</td>
+             <th><a class="btn btn-warning" href="{% url 'display' STD_id=st.id %}"><i class="fa fa-user-tag"></a></th>
+             <th><a class="btn btn-danger" href="/delete/{{st.id}}"><i class="fa fa-trash"></a></th>
+         </tr>
+         {% endfor %}
+    </table>
+</div>
+<br><br><br><br>
+{% endblock content %}
+
+user-tag
