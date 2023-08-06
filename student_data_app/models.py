@@ -47,7 +47,3 @@ class StudentStatus(models.Model):
     def __str__(self):
         return self.S_Name
 
-
-# class useres(AbstractBaseUser):
-#     username=models.CharField(max_length=200,blank=True)
-#     passw=models.IntegerField(blank=True)
